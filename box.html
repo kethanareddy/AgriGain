@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clickable Boxes with Images</title>
+<link href="box.css" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url("images/globalagriculture.jpg"); /* Replace 'your_background_image.jpg' with your image path */
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        filter: brightness(0.7);
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .title {
+        text-align: center;
+        color: white;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    }
+
+    .box {
+        position: relative; /* Required for absolute positioning of name */
+    }
+
+    .box-name {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        color: white;
+        padding: 5px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .centered {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; /* Adjust as needed */
+    }
+
+   
+
+    .sell-button {
+        display: block;
+        margin: 0 auto;
+        padding: 15px 30px; /* Adjust padding as needed */
+        font-size: 16px; /* Adjust font size as needed */
+        background-color: #4CAF50;
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div class="title">
+    <h1>SELECT YOUR WASTE PRODUCT</h1>
+</div>
+<div class="row">
+    <div class="box" onclick="handleClick(1, './redirectpages/box1.html')">
+        <img src="./images/bagasse - Copy.jpg" alt="Image 1">
+        <div class="box-name">Bagasse</div>
+    </div>
+    <div class="box" onclick="handleClick(2, './redirectpages/box2.html')">
+        <img src="./images/dryleaves.jpg" alt="Image 2">
+        <div class="box-name">Dry Leaves</div>
+    </div>
+    <div class="box" onclick="handleClick(3, './redirectpages/box3.html')">
+        <img src="./images/Handful_of_Barossa_Valley_red_grape_marc.jpg" alt="Image 3">
+        <div class="box-name">Pomace</div>
+    </div>
+</div>
+<div class="row">
+    <div class="box" onclick="handleClick(4, './redirectpages/box4.html')">
+        <img src="./images/husk.jpeg" alt="Image 4">
+        <div class="box-name">Husk</div>
+    </div>
+    <div class="box" onclick="handleClick(5, './redirectpages/box5.html')">
+        <img src="./images/manure.jpg" alt="Image 5">
+        <div class="box-name">Manure</div>
+    </div>
+    <div class="box" onclick="handleClick(6, './redirectpages/box6.html')">
+        <img src="./images/Rice_straw.jpg" alt="Image 6">
+        <div class="box-name">Rice Straw</div>
+    </div>
+</div>
+
+<div class="centered">
+    <form action="/sell">
+        <input type="submit" value="Sell" />
+    </form>
+</div>
+
+<script>
+    function handleClick(boxNumber, pageURL) {
+        window.location.href = pageURL;
+        return false;
+    }
+</script>
+</body>
+</html>
